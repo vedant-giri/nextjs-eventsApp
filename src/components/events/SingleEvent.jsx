@@ -12,6 +12,7 @@ const SingleEvent = ({ data }) => {
     e.preventDefault();
     const emailValue=inputEmail.current.value;
     const eventId=router?.query.id;
+    inputEmail.current.value="";
     try {
       const response=await fetch('/api/email_registration',{
         method:'POST',
