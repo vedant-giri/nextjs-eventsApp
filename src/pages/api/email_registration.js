@@ -1,8 +1,20 @@
 import path from 'path';
 import fs from 'fs';
+const os = require('os');
+
+const tmpDir = os.tmpdir();
+const tmpDirPath = path.join(tmpDir, 'events_app');
+
+
+if (!fs.existsSync(tmpDirPath)) {
+  fs.mkdirSync(tmpDirPath);
+}
+
+
 
 function buildPath() {
-  return path.join( process.cwd(), 'data', 'data.json');
+  return path.join( tmpDirPath, 'data.json');
+  
 }
 
 function extractData(filePath) {
@@ -15,6 +27,8 @@ export default function handler(req, res) {
   const { method } = req;
 
   const filePath = buildPath();
+
+ 
   const { events_categories, allEvents } = extractData(filePath);
 
   if (!allEvents) {
