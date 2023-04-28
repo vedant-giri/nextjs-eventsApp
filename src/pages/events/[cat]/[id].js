@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+
 import SingleEvent from '@/components/events/SingleEvent';
 
 const EventPage = ({data}) => <SingleEvent data={data}/>
@@ -27,7 +27,7 @@ export async function getStaticPaths(){
 };
 
 export async function getStaticProps(context){
-  console.log(context);
+  
   const id= context.params.id;
   const {allEvents} =await import('/data/data.json');
   const eventData=allEvents.find((ev)=>id ===ev.id);
