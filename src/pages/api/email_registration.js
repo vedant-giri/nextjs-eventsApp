@@ -19,7 +19,7 @@ const os = require('os');
 //   console.log(tmpDirPath);
 
 function buildPath() {
-  return path.join(  '/tmp', 'data.json');
+  return path.join(  process.cwd(),'/tmp-', 'data.json');
   
 }
 
