@@ -9,17 +9,17 @@ const os = require('os');
 // if (!fs.existsSync(tmpDirPath)) {
 //   fs.mkdirSync(tmpDirPath);
 // }
-const folderPath = process.cwd();
-const tmpDirPath = path.join(folderPath, 'tmp-');
+// const folderPath = process.cwd();
+// const tmpDirPath = path.join(folderPath, 'tmp-');
 
-if (!fs.existsSync(tmpDirPath)) {
-    fs.mkdirSync(tmpDirPath);
-  }
+// if (!fs.existsSync(tmpDirPath)) {
+//     fs.mkdirSync(tmpDirPath);
+//   }
 
-  console.log(tmpDirPath);
+//   console.log(tmpDirPath);
 
 function buildPath() {
-  return path.join( tmpDirPath, 'data.json');
+  return path.join( process.cwd(), 'data', 'data.json');
   
 }
 
@@ -33,7 +33,7 @@ export default function handler(req, res) {
   const { method } = req;
 
   const filePath = buildPath();
-
+  console.log(filePath);
  
   const { events_categories, allEvents } = extractData(filePath);
 
