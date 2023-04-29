@@ -2,15 +2,21 @@ import path from 'path';
 import fs from 'fs';
 const os = require('os');
 
-const tmpDir = os.tmpdir();
-const tmpDirPath = path.join(tmpDir, 'events_app');
+// const tmpDir = os.tmpdir();
+// const tmpDirPath = path.join(tmpDir, 'events_app');
 
+
+// if (!fs.existsSync(tmpDirPath)) {
+//   fs.mkdirSync(tmpDirPath);
+// }
+const folderPath = process.cwd();
+const tmpDirPath = path.join(folderPath, 'tmp-');
 
 if (!fs.existsSync(tmpDirPath)) {
-  fs.mkdirSync(tmpDirPath);
-}
+    fs.mkdirSync(tmpDirPath);
+  }
 
-
+  console.log(tmpDirPath);
 
 function buildPath() {
   return path.join( tmpDirPath, 'data.json');
