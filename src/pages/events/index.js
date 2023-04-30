@@ -11,7 +11,7 @@ const EventPage = ({data}) => {
 export default EventPage
 
 export async function getStaticProps(){
-  const {events_categories}=await import('/data/data.json');
+  const {events_categories}=await import('/tmp-/data.json');
   
   return{
     props:{
