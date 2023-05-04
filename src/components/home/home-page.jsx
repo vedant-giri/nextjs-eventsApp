@@ -1,17 +1,33 @@
 import Link from "next/link"
+import React,{useState,useEffect} from 'react'
 
 
 export const HomePage = ({ data }) => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1145);
+      
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
   return (
     <div className="home_body" >
       {data.map((env) => (
         <Link className="card" passHref={true} key={env.id} href={`/events/${env.id}`}>
-          <div className="image">
-            <img width={450} height={300} src={env.image} alt={env.title} />
+          {isMobile && <h2>{env.title}</h2>}
+          <div >
+            <img className="image" src={env.image} alt={env.title} />
           </div>
 
           <div className="content">
-            <h2>{env.title}</h2><p>{env.description}</p>
+            {!isMobile && <h2>{env.title}</h2>}
+            <p>{env.description}</p>
           </div>
         </Link>
       ))}

@@ -7,7 +7,7 @@ const Header = () => {
     <header>
     <div>
     <div className='topNav'>
-        <Image alt='logo' src={'/images/logo_black.png'} width={50} height={50}></Image>
+        <Link href="/" passHref={true}><Image alt='logo' src={'/images/logo_black.png'} width={50} height={50}></Image></Link>
         <nav>
           <ul>
             <li>
@@ -26,7 +26,7 @@ const Header = () => {
         </nav>
 
       </div>
-      <p className='title'>Events you want to visit </p>
+      <p className='title'><b>Events you want to visit</b> </p>
     </div>
       
 

@@ -1,60 +1,75 @@
-header{
+header {
     height: 300px;
     padding: 15px 30px;
     background: linear-gradient(305deg, #dbfff3, transparent);
-    
+
 }
-header>div{
-    width: 100%;
-    max-width: 1250px;
+
+header>div {
+    width: 90vw;
+    /* max-width: 1250px; */
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+
 }
-header .title{
-    width: 50%;
-    font-size: 40px;
+
+header .title {
+    width: 100%;
+    font-size: 2rem;
     text-transform: uppercase;
+    text-align: center;
 }
-header ul{
+
+header ul {
     display: flex;
     text-decoration: none;
     list-style: none;
     gap: 15px;
 }
-header ul li{
+
+header ul li {
     font-weight: 600;
     font-size: 16px;
 }
-.topNav{
+
+.topNav {
     display: flex;
     justify-content: space-between;
     align-content: center;
+    text-align: center;
 }
-footer{
+
+footer {
     background-color: black;
     color: white;
     padding: 10px;
     text-align: center;
 }
-main{
+
+main {
     width: 100%;
     max-width: 1250px;
     margin: auto;
     padding: 80px 30px;
     min-height: 550px;
 }
-.home_body{
+
+.home_body {
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
-.home_body .image{
-    width: 40%;
+
+.home_body .image {
+    width: 450px;
+    max-width: 100%;
+    max-height: 300px;
+    
 }
-.home_body .card{
+
+.home_body .card {
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -62,101 +77,208 @@ main{
     align-items: center;
     align-content: center;
 }
-.home_body .card:nth-child(even){
+
+.home_body .card:nth-child(even) {
     direction: rtl;
 }
-.home_body .card .content{
-    width:50%;
+
+.home_body .card .content {
+    width: 50%;
     
 }
-.about_us_list{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-.events_page{
+.events_page {
     display: flex;
     justify-content: center;
     flex-direction: row;
     gap: 50px;
-    
+
+}
+.events_page .image{
+    width: 450px;
+    max-width: 100%;
+    max-height: 300px;
+    height: 300px;
 }
 .events_page .card{
     position: relative;
-    display: flex;
-    
     
 }
-.events_page  h2{
+.events_page h2 {
     position: absolute;
     text-align: center;
-    top: 85%;
+    top: 50%;
     font-size: 25px;
     color: white;
     text-transform: uppercase;
     text-shadow: 1px 1px 20px black;
     padding: 20px;
 }
-
-.cat_events{
+.cat_events {
     text-align: center;
-    
+
 }
-.cat_events .content .card{
+
+.cat_events .content .card {
     display: flex;
     flex-direction: column;
     width: 100%;
-    
+
 }
-.cat_events .content{
+
+.cat_events .content {
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap ;
+    flex-wrap: wrap;
     gap: 100px;
     width: calc(100%-(100px * 3));
     margin-right: 0;
     margin-left: 0;
     justify-content: center;
 }
-.cat_events .content .link_card{
+
+.cat_events .content .link_card {
     display: flex;
     justify-content: center;
     width: 300px;
 }
-
-.event_single_page .email_registration input{
+.cat_events .image{
+    width: 450px;
+    max-width: 100%;
+    max-height: 300px;
+    height: 300px;
+}
+.event_single_page .image{
+    width: 1000px;
+    height: 500px;
+    max-width: 100%;
+    
+}
+.event_single_page{
+    text-align: center;
+}
+.event_single_page .image_div{
+    display: flex;
+    justify-content: center;
+}
+.event_single_page .email_registration input {
     height: 40px;
-    min-width: 350px;
+    width: 350px;
     box-shadow: none;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 16px;
+    margin-bottom: 5px;
+    max-width: 85%;
 }
-.event_single_page .email_registration{
+
+.event_single_page .email_registration {
     margin-top: 25px;
 }
-.event_single_page .email_registration label{
+
+.event_single_page .email_registration label {
     display: flex;
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: 800;
     text-transform: uppercase;
     margin-top: 25px;
+    justify-content: center;
 }
-.event_single_page .email_registration button{
+
+.event_single_page .email_registration button {
     border-radius: 5px;
     height: 40px;
-    min-width: 150px;
+    width: 150px;
     border: 1px solid #5f5a5a;
     font-size: 16px;
     text-transform: uppercase;
     margin-left: 10px;
     font-weight: 600;
-    background:#dcfff3;
+    background: #dcfff3;
     cursor: pointer;
+    
 }
-.event_single_page .email_registration button:hover{
+
+.event_single_page .email_registration button:hover {
     color: #dcfff3;
-    background:#333;
+    background: #333;
 }
+@media screen and (max-width: 550px) {
+    .event_single_page .image{
+        height: 50%;
+    }
+    .event_single_page .email_registration button {
+        width: 80px;
+    }
+}
+@media screen and (max-width: 1145px) {
+    .home_body .card:nth-child(even) {
+        direction: unset;
+    }
+
+    .home_body .card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+    }
+    .home_body .card .content {
+        width: 80%;
+        text-align: center;
+        
+    }
+    header{
+        height: 200px;
+    }
+    header .title{
+        font-size: 1.5rem;
+    }
+    .events_page {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 50px;
+    
+    }
+    .events_page .card{
+        display: flex;
+        justify-content: center;
+    }
+    .cat_events{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .cat_events .card{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (min-width:1500px){
+    header > div{
+        margin: 0;
+        
+    }
+}
+
+.about_us_list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+
+/* .events_page .card {
+    position: relative;
+    display: flex;
+
+
+} */
+
+
+
+
+
