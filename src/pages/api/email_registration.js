@@ -54,7 +54,7 @@ export default function handler(req, res) {
     const newAllEvents = allEvents.map((ev) => {
       if (ev.id === eventId) {
         if (ev.emails_registered.includes(email)) {
-          res.status(409).json({ message: 'This email has already been registered' });
+          res.status(201).json({ message: 'This email has already been registered' });
           return ev;
         }
         return {
